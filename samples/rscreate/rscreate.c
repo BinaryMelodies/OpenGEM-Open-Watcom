@@ -250,7 +250,7 @@ VOID fix_img(LPLONG where)
 }
 
 MLOCAL LONG sub_pointer( p1, p2 )
-VOID FAR *p1, *p2;
+VOID FAR *p1, FAR *p2;
 {
    LONG l1,l2;
 
@@ -263,7 +263,7 @@ VOID FAR *p1, *p2;
 }
 
 MLOCAL LPVOID vsub_pointer( p1, p2 )
-VOID FAR *p1, *p2;
+VOID FAR *p1, FAR *p2;
 {
    return (LPVOID)(sub_pointer(p1, p2));
 }

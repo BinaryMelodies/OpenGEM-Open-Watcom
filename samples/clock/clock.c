@@ -29,7 +29,7 @@ Research Inc. / 70 Garden Court / BOX DRI / Monterey, CA 93940.
 #include <time.h>	/* For time() */
 #include <stdio.h>	/* For sprintf */
 
-#ifdef __PACIFIC__
+#if defined __PACIFIC__ || __WATCOMC__
 #define MSDOS 1
 #endif
 

@@ -87,7 +87,7 @@ BOOLEAN prf_area_chart = TRUE;         /* TRUE use v_fillarea else use v_pline*/
 BOOLEAN prf_graph = TRUE;              /* TRUE means draw 25%, 50% & 75% lines*/
 GRECT last_close;                      /* rectangle of last window-position   */
 
-#ifdef __PACIFIC__
+#if defined __PACIFIC__ || defined __WATCOMC__
 #define MSDOS 1
 #endif
 

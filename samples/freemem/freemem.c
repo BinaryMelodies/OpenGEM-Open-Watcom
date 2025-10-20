@@ -232,7 +232,7 @@ WORD msg_buf[];
          sprintf(space_os, "V%d.%02d", vh, vl);
 #endif
          wind_update(BEG_UPDATE);
-         do_redraw(&msg_buf[4]);
+         do_redraw((GRECT *)&msg_buf[4]);
          wind_update(END_UPDATE);
          break;
 

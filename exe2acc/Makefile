@@ -1,14 +1,15 @@
 include ../makedefs.i
 
-CFLAGS = -q -ox $(STDINC)
+CFLAGS = -I../../include
+EXEEXT = 
 
-all:	../bin/exe2acc.exe
+all:	../bin/exe2acc${EXEEXT}
 
-../bin/exe2acc.exe:	exe2acc.exe
-	cp exe2acc.exe ../bin
+../bin/exe2acc${EXEEXT}:	exe2acc${EXEEXT}
+	cp exe2acc${EXEEXT} ../bin
 
-exe2acc.exe:	exe2acc.c
-	wcl $(CFLAGS) $<
+exe2acc${EXEEXT}:	exe2acc.c
+	$(CC) $(CFLAGS) $< -o $@
 
 tidy:
 	rm -f exe2acc.exe

@@ -318,7 +318,7 @@ WORD GEMAIN(WORD argc, BYTE *ARGV[])
 
 	/* Insert our AES into the call chain */
 	
-	ppd_hookon(myaes, NULL, NULL);
+	//ppd_hookon(myaes, NULL, NULL); // TODO: unimplemented
 	
 	if (growbox_init())			/* initialization	*/
 	{

@@ -12,3 +12,8 @@
 !tools/*.acc
 *.exe
 !toos/*.exe
+bin/exe2acc
+bin/exe2acc.exe
+exe2acc/exe2acc
+exe2acc/exe2acc.exe
+samples/*.rsc
