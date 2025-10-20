@@ -27,13 +27,13 @@ main:	$(MAIN)
 
 main-l.obj:	main.c
 	$(CC) -Bl $(CFLAGS) -C $<
-	copy main.obj $@
-	erase main.obj
+	cp main.obj $@
+	rm -f main.obj
 
 main-s.obj:	main.c
 	$(CC) -Bs $(CFLAGS) -C $<
-	copy main.obj $@
-	erase main.obj
+	cp main.obj $@
+	rm -f main.obj
 
 demo-s.app demo-l.app:	$(MAIN)
 	cd demo
@@ -97,8 +97,8 @@ xform-s.app xform-l.app: $(MAIN)
 	cd ..
 
 tidy:
-	erase main-?.obj
-	erase *.bak
+	rm -f main-?.obj
+	rm -f *.bak
 	cd hello
 	make tidy
 	cd ..
@@ -137,12 +137,12 @@ tidy:
 	cd ..
 
 clean:
-	erase main-?.obj
-	erase *.rsc
-	erase *.app
-	erase *.acc
-	erase *.exe
-	erase *.bak
+	rm -f main-?.obj
+	rm -f *.rsc
+	rm -f *.app
+	rm -f *.acc
+	rm -f *.exe
+	rm -f *.bak
 	cd hello
 	make clean
 	cd ..

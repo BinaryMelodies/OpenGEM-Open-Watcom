@@ -6,10 +6,10 @@ CC = pacc
 all:	../udef-l.app ../udef-s.app ../userdef.rsc
 
 ../%.app:	%.app
-	copy $< ..
+	cp $< ..
 
 ../userdef.rsc:	userdef.rsc
-	copy userdef.rsc ..
+	cp userdef.rsc ..
 
 udef-l.app:	userdef.c userdef.h 
 	$(CC) -Bl $(CFLAGS) -O$@ $< ../../lib/ppdgem-l.lib
@@ -18,11 +18,11 @@ udef-s.app:	userdef.c userdef.h
 	$(CC) -Bs $(CFLAGS) -O$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
-	erase *.bak
-	erase *.sdb
-	erase *.sym
-	erase *.map
-	erase *.obj
-	erase udef-?.app
+	rm -f *.bak
+	rm -f *.sdb
+	rm -f *.sym
+	rm -f *.map
+	rm -f *.obj
+	rm -f udef-?.app
 
 clean:	tidy

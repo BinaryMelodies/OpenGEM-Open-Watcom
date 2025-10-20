@@ -10,17 +10,17 @@ CC = pacc
 all:	../rscr-s.exe
 
 ../%.exe:	%.exe
-	copy $< ..
+	cp $< ..
 
 rscr-s.exe:	rscreate.c
 	$(CC) -Bs $(CFLAGS) -O$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
-	erase rscr-?.exe
-	erase *.bak
-	erase *.sdb
-	erase *.sym
-	erase *.map
-	erase *.obj
+	rm -f rscr-?.exe
+	rm -f *.bak
+	rm -f *.sdb
+	rm -f *.sym
+	rm -f *.map
+	rm -f *.obj
 
 clean:	tidy

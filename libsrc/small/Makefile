@@ -62,7 +62,7 @@ all:	ppdgem-s.lib
 # Because of the short DOS command line, I can't just say "libr r $@ $(OBJECTS)"
 #
 ppdgem-s.lib:	$(OBJECTS)
-	erase ppdgem-s.lib
+	rm -f ppdgem-s.lib
 	libr r ppdgem-s.lib ems_all.obj ems_fp.obj ems_free.obj ems_fs.obj ems_map.obj ems_np.obj ems_rmap.obj 
 	libr r ppdgem-s.lib ems_smap.obj ems_vers.obj emslib.obj ob_dofl.obj ob_dost.obj ob_dr_di.obj 
 	libr r ppdgem-s.lib ob_g_txt.obj ob_isfl.obj ob_isst.obj ob_s_txt.obj ob_ud_di.obj ob_udfl.obj 
@@ -115,8 +115,8 @@ ppdgem-s.lib:	$(OBJECTS)
 
 
 tidy:
-	erase *.bak
-	erase *.obj
-	erase ppdgem-s.lib
+	rm -f *.bak
+	rm -f *.obj
+	rm -f ppdgem-s.lib
 
 clean:	tidy

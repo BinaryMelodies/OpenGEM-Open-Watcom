@@ -62,25 +62,25 @@ SOURCE = ems_all.c ems_fp.c ems_free.c ems_fs.c ems_map.c ems_np.c \
 all:	../lib/ppdgem-l.lib ../lib/ppdgem-s.lib
 
 ../lib/ppdgem-l.lib: large/ppdgem-l.lib 
-	copy large/ppdgem-l.lib ..\lib\ppdgem-l.lib
+	cp large/ppdgem-l.lib ..\lib\ppdgem-l.lib
 
 ../lib/ppdgem-s.lib: small/ppdgem-s.lib
-	copy small/ppdgem-s.lib ..\lib\ppdgem-s.lib
+	cp small/ppdgem-s.lib ..\lib\ppdgem-s.lib
 
 large/ppdgem-l.lib: $(SOURCE)
 	cd large
 	make
-	copy ppdgem-l.lib ../../lib
+	cp ppdgem-l.lib ../../lib
 	cd ..
 
 small/ppdgem-s.lib: $(SOURCE)
 	cd small
 	make
-	copy ppdgem-s.lib ../../lib
+	cp ppdgem-s.lib ../../lib
 	cd ..
 
 tidy:
-	erase *.bak
+	rm -f *.bak
 	cd large
 	make tidy
 	cd ..
@@ -89,7 +89,7 @@ tidy:
 	cd ..
 
 clean:	
-	erase *.bak
+	rm -f *.bak
 	cd large
 	make clean
 	cd ..

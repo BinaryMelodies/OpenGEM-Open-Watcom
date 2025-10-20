@@ -9,7 +9,7 @@ all:	../fmem-l.acc ../fmem-s.acc ../freemem.rsc
 	../../bin/exe2acc $< $@
 
 ../%.rsc:	%.rsc
-	copy $< ..
+	cp $< ..
 
 
 fmem-l.exe:	freemem.c 
@@ -19,11 +19,11 @@ fmem-s.exe:	freemem.c
 	$(CC) -Bs -DESKACC $(CFLAGS) -Hfmem-s.sym -O$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
-	erase fmem-?.exe
-	erase *.bak
-	erase *.sdb
-	erase *.sym
-	erase *.map
-	erase *.obj
+	rm -f fmem-?.exe
+	rm -f *.bak
+	rm -f *.sdb
+	rm -f *.sym
+	rm -f *.map
+	rm -f *.obj
 
 clean:	tidy

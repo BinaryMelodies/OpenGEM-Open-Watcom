@@ -6,7 +6,7 @@ CC = pacc
 all:	../hello-l.app ../hello-s.app ../hello-l.acc ../hello-s.acc 
 
 ../%.app:	%.app
-	copy $< ..
+	cp $< ..
 
 ../%.acc:	%.exe
 	../../bin/exe2acc $< $@
@@ -26,12 +26,12 @@ hello-s.exe:	hello.c
 	$(CC) -Bs -DESKACC $(CFLAGS) -Hhello-s.sym -O$@ $< ../main-s.obj ../../lib/ppdgem-s.lib
 
 tidy:
-	erase hello-?.exe
-	erase hello-?.app
-	erase *.bak
-	erase *.sdb
-	erase *.sym
-	erase *.map
-	erase *.obj
+	rm -f hello-?.exe
+	rm -f hello-?.app
+	rm -f *.bak
+	rm -f *.sdb
+	rm -f *.sym
+	rm -f *.map
+	rm -f *.obj
 
 clean:	tidy

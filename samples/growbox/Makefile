@@ -16,11 +16,11 @@ growbx-s.exe:	growbox.c
 	$(CC) -Bs -DESKACC $(CFLAGS) -Hgrowbx-s.sym -O$@ $< ../main-s.obj ../../lib/ppdgem-s.lib
 
 tidy:
-	erase growbx-?.exe
-	erase *.bak
-	erase *.sdb
-	erase *.sym
-	erase *.map
-	erase *.obj
+	rm -f growbx-?.exe
+	rm -f *.bak
+	rm -f *.sdb
+	rm -f *.sym
+	rm -f *.map
+	rm -f *.obj
 
 clean:	tidy

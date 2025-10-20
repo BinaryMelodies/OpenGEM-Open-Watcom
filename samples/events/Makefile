@@ -8,13 +8,13 @@ HDRS   = events.h meta.h proto.h types.h window.h
 all:	../events-l.app ../events-s.app ../events.rsc ../events.gem
 
 ../%.app:	%.app
-	copy $< ..
+	cp $< ..
 
 ../events.rsc:	events.rsc
-	copy events.rsc ..
+	cp events.rsc ..
 
 ../events.gem:	events.gem
-	copy events.gem ..
+	cp events.gem ..
 
 events-l.app:	$(SOURCE) $(HDRS)
 	$(CC) -Bl $(CFLAGS) -O$@ $(SOURCE) ../../lib/ppdgem-l.lib
@@ -23,11 +23,11 @@ events-s.app:	$(SOURCE) $(HDRS)
 	$(CC) -Bs $(CFLAGS) -O$@ $(SOURCE) ../../lib/ppdgem-s.lib
 
 tidy:
-	erase *.bak
-	erase *.sdb
-	erase *.sym
-	erase *.map
-	erase *.obj
-	erase events-?.app
+	rm -f *.bak
+	rm -f *.sdb
+	rm -f *.sym
+	rm -f *.map
+	rm -f *.obj
+	rm -f events-?.app
 
 clean:	tidy

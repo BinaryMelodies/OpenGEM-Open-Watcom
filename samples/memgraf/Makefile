@@ -6,7 +6,7 @@ CC = pacc
 all:	../mgrf-l.app ../mgrf-s.app ../mgrf-l.acc ../mgrf-s.acc 
 
 ../%.app:	%.app
-	copy $< ..
+	cp $< ..
 
 ../%.acc:	%.exe
 	../../bin/exe2acc $< $@
@@ -26,12 +26,12 @@ mgrf-s.exe:	memgraf.c
 	$(CC) -Bs -DESKACC $(CFLAGS) -Hmgrf-s.sym -O$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
-	erase mgrf-?.exe
-	erase mgrf-?.app
-	erase *.bak
-	erase *.sdb
-	erase *.sym
-	erase *.map
-	erase *.obj
+	rm -f mgrf-?.exe
+	rm -f mgrf-?.app
+	rm -f *.bak
+	rm -f *.sdb
+	rm -f *.sym
+	rm -f *.map
+	rm -f *.obj
 
 clean:	tidy

@@ -65,5 +65,5 @@ tidy:
 	cd ..
 
 zip:
-	erase ppdgem.zip
+	rm -f ppdgem.zip
 	pkzip -rP ppdgem.zip *.*

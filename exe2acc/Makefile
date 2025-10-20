@@ -5,13 +5,13 @@ CFLAGS = -Zg -O $(STDINC)
 all:	../bin/exe2acc.exe
 
 ../bin/exe2acc.exe:	exe2acc.exe
-	copy exe2acc.exe ../bin
+	cp exe2acc.exe ../bin
 
 exe2acc.exe:	exe2acc.c
 	pacc $(CFLAGS) $<
 
 tidy:
-	erase exe2acc.exe
+	rm -f exe2acc.exe
 
 clean:	tidy
 

@@ -6,7 +6,7 @@ CC = pacc
 all:	../clock-l.app ../clock-s.app ../clock-l.acc ../clock-s.acc 
 
 ../%.app:	%.app
-	copy $< ..
+	cp $< ..
 
 ../%.acc:	%.exe
 	../../bin/exe2acc $< $@
@@ -26,12 +26,12 @@ clock-s.exe:	clock.c
 	$(CC) -Bs -DESKACC $(CFLAGS) -Hclock-s.sym -O$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
-	erase clock-?.exe
-	erase clock-?.app
-	erase *.bak
-	erase *.sdb
-	erase *.sym
-	erase *.map
-	erase *.obj
+	rm -f clock-?.exe
+	rm -f clock-?.app
+	rm -f *.bak
+	rm -f *.sdb
+	rm -f *.sym
+	rm -f *.map
+	rm -f *.obj
 
 clean:	tidy
