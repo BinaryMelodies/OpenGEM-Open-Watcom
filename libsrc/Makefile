@@ -3,7 +3,7 @@
 #
 include ../makedefs.i
 
-LIBDIR=$(CCDIR)\LIB
+LIBDIR=$(CCDIR)/lib
 
 SOURCE = ems_all.c ems_fp.c ems_free.c ems_fs.c ems_map.c ems_np.c \
 	 ems_rmap.c ems_smap.c ems_vers.c emslib.c ev_event.c formdo.c \
@@ -62,21 +62,21 @@ SOURCE = ems_all.c ems_fp.c ems_free.c ems_fs.c ems_map.c ems_np.c \
 all:	../lib/ppdgem-l.lib ../lib/ppdgem-s.lib
 
 ../lib/ppdgem-l.lib: large/ppdgem-l.lib 
-	copy large\ppdgem-l.lib ..\lib\ppdgem-l.lib
+	copy large/ppdgem-l.lib ..\lib\ppdgem-l.lib
 
 ../lib/ppdgem-s.lib: small/ppdgem-s.lib
-	copy small\ppdgem-s.lib ..\lib\ppdgem-s.lib
+	copy small/ppdgem-s.lib ..\lib\ppdgem-s.lib
 
 large/ppdgem-l.lib: $(SOURCE)
 	cd large
 	make
-	copy ppdgem-l.lib ..\..\lib
+	copy ppdgem-l.lib ../../lib
 	cd ..
 
 small/ppdgem-s.lib: $(SOURCE)
 	cd small
 	make
-	copy ppdgem-s.lib ..\..\lib
+	copy ppdgem-s.lib ../../lib
 	cd ..
 
 tidy:

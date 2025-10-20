@@ -2,8 +2,8 @@
 include ../makedefs.i
 
 install:
-	copy ppdgem-l.lib $(CCDIR)\LIB
-	copy ppdgem-s.lib $(CCDIR)\LIB
+	copy ppdgem-l.lib $(CCDIR)/lib
+	copy ppdgem-s.lib $(CCDIR)/lib
 
 tidy:
 

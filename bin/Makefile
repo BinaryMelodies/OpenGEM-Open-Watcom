@@ -2,7 +2,7 @@
 include ../makedefs.i
 
 install:
-	copy exe2acc.exe $(CCDIR)\BIN
+	copy exe2acc.exe $(CCDIR)/bin
 
 tidy:
 

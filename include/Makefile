@@ -3,4 +3,4 @@ include ../makedefs.i
 all:
 
 install:
-	copy *.h $(CCDIR)\INCLUDE
+	copy *.h $(CCDIR)/include

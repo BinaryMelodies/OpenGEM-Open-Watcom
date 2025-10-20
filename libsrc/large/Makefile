@@ -1,7 +1,7 @@
 include ../../makedefs.i
 #
 CC = pacc
-CFLAGS = -Bl -Zg -I../../INCLUDE -I.. $(STDINC)
+CFLAGS = -Bl -Zg -I../../include -I.. $(STDINC)
 
 
 OBJECTS = ems_all.obj ems_fp.obj ems_free.obj ems_fs.obj ems_map.obj ems_np.obj ems_rmap.obj \

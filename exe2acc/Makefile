@@ -5,7 +5,7 @@ CFLAGS = -Zg -O $(STDINC)
 all:	../bin/exe2acc.exe
 
 ../bin/exe2acc.exe:	exe2acc.exe
-	copy exe2acc.exe ..\bin
+	copy exe2acc.exe ../bin
 
 exe2acc.exe:	exe2acc.c
 	pacc $(CFLAGS) $<
