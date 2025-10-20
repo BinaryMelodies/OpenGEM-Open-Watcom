@@ -1,7 +1,7 @@
 include ../../makedefs.i
 #
-CC = pacc
-CFLAGS = -Bl -Zg -I../../include -I.. $(STDINC)
+CC = wcl
+CFLAGS = -q -ml -ox -i=../../include -i=.. $(STDINC)
 
 
 OBJECTS = ems_all.obj ems_fp.obj ems_free.obj ems_fs.obj ems_map.obj ems_np.obj ems_rmap.obj \
@@ -108,10 +108,10 @@ ppdgem-l.lib:	$(OBJECTS)
 	libr r ppdgem-l.lib ppdv135.obj ppdv136.obj ppdv137.obj ppdv138.obj ppdvdi.obj 
 
 %.obj:	../%.c
-	$(CC) -O$@ -C $(CFLAGS) $<
+	$(CC) -fo=$@ -c $(CFLAGS) $<
 
 %.obj:	../%.as
-	$(CC) -O$@ -C $(CFLAGS) $<
+	$(CC) -fo=$@ -c $(CFLAGS) $<
 
 tidy:
 	rm -f *.bak

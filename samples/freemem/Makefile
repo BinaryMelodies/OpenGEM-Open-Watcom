@@ -1,7 +1,7 @@
 include ../../makedefs.i
 
-CFLAGS = -Zg $(STDINC)
-CC = pacc
+CFLAGS = -q -ox $(STDINC)
+CC = wcl
 
 all:	../fmem-l.acc ../fmem-s.acc ../freemem.rsc
 
@@ -13,10 +13,10 @@ all:	../fmem-l.acc ../fmem-s.acc ../freemem.rsc
 
 
 fmem-l.exe:	freemem.c 
-	$(CC) -Bl -DDESKACC $(CFLAGS) -Hfmem-l.sym -O$@ $<  ../../lib/ppdgem-l.lib
+	$(CC) -ml -DDESKACC $(CFLAGS) -fm=fmem-l.map -fe=$@ $<  ../../lib/ppdgem-l.lib
 
 fmem-s.exe:	freemem.c
-	$(CC) -Bs -DESKACC $(CFLAGS) -Hfmem-s.sym -O$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms -DESKACC $(CFLAGS) -fm=fmem-s.map -fe=$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
 	rm -f fmem-?.exe

@@ -16,8 +16,8 @@ TARGETS=demo-s.app   demo-l.app   \
 	mgraf-s.acc  mgraf-l.acc  \
 	rscr-s.exe
 
-CC = pacc
-CFLAGS = -Zg $(STDINC) -I../include
+CC = wcl
+CFLAGS = -q -ox $(STDINC) -i=../include
 
 MAIN = main-l.obj main-s.obj
 
@@ -26,12 +26,12 @@ all:	$(TARGETS)
 main:	$(MAIN)
 
 main-l.obj:	main.c
-	$(CC) -Bl $(CFLAGS) -C $<
+	$(CC) -ml $(CFLAGS) -c $<
 	cp main.obj $@
 	rm -f main.obj
 
 main-s.obj:	main.c
-	$(CC) -Bs $(CFLAGS) -C $<
+	$(CC) -ms $(CFLAGS) -c $<
 	cp main.obj $@
 	rm -f main.obj
 

@@ -1,11 +1,8 @@
 include ../../makedefs.i
 
 #
-# nb: Low warning level, so that the RCS-generated file EXAMPLE.RSH 
-# doesn't cause warnings
-#
-CFLAGS = -Zg -W5 $(STDINC)
-CC = pacc
+CFLAGS = -q -ox $(STDINC)
+CC = wcl
 
 all:	../rscr-s.exe
 
@@ -13,7 +10,7 @@ all:	../rscr-s.exe
 	cp $< ..
 
 rscr-s.exe:	rscreate.c
-	$(CC) -Bs $(CFLAGS) -O$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
 	rm -f rscr-?.exe

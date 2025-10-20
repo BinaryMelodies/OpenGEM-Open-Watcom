@@ -1,6 +1,6 @@
 include ../makedefs.i
 
-CFLAGS = -Zg -O $(STDINC)
+CFLAGS = -q -ox $(STDINC)
 
 all:	../bin/exe2acc.exe
 
@@ -8,7 +8,7 @@ all:	../bin/exe2acc.exe
 	cp exe2acc.exe ../bin
 
 exe2acc.exe:	exe2acc.c
-	pacc $(CFLAGS) $<
+	wcl $(CFLAGS) $<
 
 tidy:
 	rm -f exe2acc.exe

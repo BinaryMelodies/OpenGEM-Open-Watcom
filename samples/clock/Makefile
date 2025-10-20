@@ -1,7 +1,7 @@
 include ../../makedefs.i
 
-CFLAGS = -Zg $(STDINC)
-CC = pacc
+CFLAGS = -q -ox $(STDINC)
+CC = wcl
 
 all:	../clock-l.app ../clock-s.app ../clock-l.acc ../clock-s.acc 
 
@@ -13,17 +13,17 @@ all:	../clock-l.app ../clock-s.app ../clock-l.acc ../clock-s.acc
 
 
 clock-l.app:	clock.c
-	$(CC) -Bl $(CFLAGS) -O$@ $<  ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $<  ../../lib/ppdgem-l.lib
 
 clock-s.app:	clock.c
-	$(CC) -Bs $(CFLAGS) -O$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
 
 
 clock-l.exe:	clock.c 
-	$(CC) -Bl -DDESKACC $(CFLAGS) -Hclock-l.sym -O$@ $<  ../../lib/ppdgem-l.lib
+	$(CC) -ml -DDESKACC $(CFLAGS) -fm=clock-l.map -fe=$@ $<  ../../lib/ppdgem-l.lib
 
 clock-s.exe:	clock.c
-	$(CC) -Bs -DESKACC $(CFLAGS) -Hclock-s.sym -O$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms -DESKACC $(CFLAGS) -fm=clock-s.map -fe=$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
 	rm -f clock-?.exe

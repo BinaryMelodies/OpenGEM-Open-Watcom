@@ -1,7 +1,7 @@
 include ../../makedefs.i
 
-CFLAGS = -Zg $(STDINC)
-CC = pacc
+CFLAGS = -q -ox $(STDINC)
+CC = wcl
 
 all:	../xform-l.app ../xform-s.app ../xform.rsc
 
@@ -12,10 +12,10 @@ all:	../xform-l.app ../xform-s.app ../xform.rsc
 	cp xform.rsc ..
 
 xform-l.app:	xform.c xform.h
-	$(CC) -Bl $(CFLAGS) -O$@ xform.c ../main-l.obj ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ xform.c ../main-l.obj ../../lib/ppdgem-l.lib
 
 xform-s.app:	xform.c xform.h
-	$(CC) -Bs $(CFLAGS) -O$@ xform.c ../main-s.obj ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ xform.c ../main-s.obj ../../lib/ppdgem-s.lib
 
 tidy:
 	rm -f *.obj

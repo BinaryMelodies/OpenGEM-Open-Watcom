@@ -1,7 +1,7 @@
 include ../../makedefs.i
 
-CFLAGS = -Zg $(STDINC)
-CC = pacc
+CFLAGS = -q -ox $(STDINC)
+CC = wcl
 
 all:	../udef-l.app ../udef-s.app ../userdef.rsc
 
@@ -12,10 +12,10 @@ all:	../udef-l.app ../udef-s.app ../userdef.rsc
 	cp userdef.rsc ..
 
 udef-l.app:	userdef.c userdef.h 
-	$(CC) -Bl $(CFLAGS) -O$@ $< ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-l.lib
 
 udef-s.app:	userdef.c userdef.h
-	$(CC) -Bs $(CFLAGS) -O$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
 	rm -f *.bak

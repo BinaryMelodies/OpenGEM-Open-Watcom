@@ -1,7 +1,7 @@
 include ../../makedefs.i
 
-CFLAGS = -Zg $(STDINC)
-CC = pacc
+CFLAGS = -q -ox $(STDINC)
+CC = wcl
 
 all:	../fdtest-l.app ../fdtest-s.app ../fdtest.rsc
 
@@ -12,10 +12,10 @@ all:	../fdtest-l.app ../fdtest-s.app ../fdtest.rsc
 	cp fdtest.rsc ..
 
 fdtest-l.app:	fdtest.c fdtest.h 
-	$(CC) -Bl $(CFLAGS) -O$@ $< ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-l.lib
 
 fdtest-s.app:	fdtest.c fdtest.h
-	$(CC) -Bs $(CFLAGS) -O$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
 	rm -f *.bak

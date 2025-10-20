@@ -1,7 +1,7 @@
 include ../../makedefs.i
 
-CFLAGS = -Zg $(STDINC)
-CC = pacc
+CFLAGS = -q -ox $(STDINC)
+CC = wcl
 
 all:	../spool-l.app ../spool-s.app ../spooler.rsc
 
@@ -12,10 +12,10 @@ all:	../spool-l.app ../spool-s.app ../spooler.rsc
 	cp spooler.rsc ..
 
 spool-l.app:	spooler.c spooler.h 
-	$(CC) -Bl $(CFLAGS) -O$@ $< ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-l.lib
 
 spool-s.app:	spooler.c spooler.h
-	$(CC) -Bs $(CFLAGS) -O$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
 
 tidy:
 	rm -f *.bak

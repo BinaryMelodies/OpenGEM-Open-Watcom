@@ -1,7 +1,7 @@
 include ../../makedefs.i
 
-CFLAGS = -Zg $(STDINC)
-CC = pacc
+CFLAGS = -q -ox $(STDINC)
+CC = wcl
 
 all:	../growbx-l.acc ../growbx-s.acc
 
@@ -10,10 +10,10 @@ all:	../growbx-l.acc ../growbx-s.acc
 
 
 growbx-l.exe:	growbox.c 
-	$(CC) -Bl -DDESKACC $(CFLAGS) -Hgrowbx-l.sym -O$@ $< ../main-l.obj ../../lib/ppdgem-l.lib
+	$(CC) -ml -DDESKACC $(CFLAGS) -fm=growbx-l.map -fe=$@ $< ../main-l.obj ../../lib/ppdgem-l.lib
 
 growbx-s.exe:	growbox.c
-	$(CC) -Bs -DESKACC $(CFLAGS) -Hgrowbx-s.sym -O$@ $< ../main-s.obj ../../lib/ppdgem-s.lib
+	$(CC) -ms -DESKACC $(CFLAGS) -fm=growbx-s.map -fe=$@ $< ../main-s.obj ../../lib/ppdgem-s.lib
 
 tidy:
 	rm -f growbx-?.exe
