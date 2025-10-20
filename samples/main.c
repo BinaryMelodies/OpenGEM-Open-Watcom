@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 */	return GEMAIN(argc, argv);
 }
 
-#asm
+/*#asm
 
 	.globl __Hstack
 
@@ -84,7 +84,7 @@ _freemem:
 frend:
 	ret
 	
-#endasm
+#endasm*/
 /*
 	PUBLIC	MAIN
 BEGIN   PROC    FAR

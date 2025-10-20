@@ -4,3 +4,11 @@
 *.obj
 *.err
 *.bak
+*.app
+*.map
+*.o
+!tools/*.app
+*.acc
+!tools/*.acc
+*.exe
+!toos/*.exe

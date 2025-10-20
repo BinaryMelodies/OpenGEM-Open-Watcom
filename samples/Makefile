@@ -25,15 +25,13 @@ all:	$(TARGETS)
 
 main:	$(MAIN)
 
+.PHONY:	main
+
 main-l.obj:	main.c
-	$(CC) -ml $(CFLAGS) -c $<
-	cp main.obj $@
-	rm -f main.obj
+	$(CC) -ml $(CFLAGS) -c $< -fo=$@
 
 main-s.obj:	main.c
-	$(CC) -ms $(CFLAGS) -c $<
-	cp main.obj $@
-	rm -f main.obj
+	$(CC) -ms $(CFLAGS) -c $< -fo=$@
 
 demo-s.app demo-l.app:	$(MAIN)
 	make -C demo
