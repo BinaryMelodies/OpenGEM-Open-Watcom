@@ -12,6 +12,13 @@ typedef FAR BYTE   *LPBYTE;
 typedef FAR WORD   *LPWORD;
 typedef FAR LONG   *LPLONG;
 typedef FAR UWORD  *LPUWORD;
+#elif defined __WATCOMC__
+typedef VOID FAR   *LPVOID;
+typedef LPVOID FAR *LPLPTR;
+typedef BYTE FAR   *LPBYTE;
+typedef WORD FAR   *LPWORD;
+typedef LONG FAR   *LPLONG;
+typedef UWORD FAR  *LPUWORD;
 #else
 #define LPVOID LONG
 #define LPLPTR LONG

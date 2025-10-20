@@ -62,10 +62,10 @@ SOURCE = ems_all.c ems_fp.c ems_free.c ems_fs.c ems_map.c ems_np.c \
 all:	../lib/ppdgem-l.lib ../lib/ppdgem-s.lib
 
 ../lib/ppdgem-l.lib: large/ppdgem-l.lib 
-	cp large/ppdgem-l.lib ..\lib\ppdgem-l.lib
+	cp large/ppdgem-l.lib ../lib/ppdgem-l.lib
 
 ../lib/ppdgem-s.lib: small/ppdgem-s.lib
-	cp small/ppdgem-s.lib ..\lib\ppdgem-s.lib
+	cp small/ppdgem-s.lib ../lib/ppdgem-s.lib
 
 large/ppdgem-l.lib: $(SOURCE)
 	make -C large

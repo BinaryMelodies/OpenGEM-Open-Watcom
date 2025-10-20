@@ -2,6 +2,7 @@ include ../../makedefs.i
 
 CC = wcl
 CFLAGS = -q -ms -ox -i=../../include -i=.. $(STDINC)
+ASFLAGS = -q -ms -i=../../include -i=.. $(STDINC)
 
 OBJECTS = ems_all.obj ems_fp.obj ems_free.obj ems_fs.obj ems_map.obj ems_np.obj ems_rmap.obj \
 	  ems_smap.obj ems_vers.obj emslib.obj ob_dofl.obj ob_dost.obj ob_dr_di.obj \
@@ -31,7 +32,7 @@ OBJECTS = ems_all.obj ems_fp.obj ems_free.obj ems_fs.obj ems_map.obj ems_np.obj 
 	  ppdg078.obj ppdg079.obj ppdg080.obj ppdg081.obj ppdg082.obj ppdg083.obj \
 	  ppdg084.obj ppdg085.obj ppdg086.obj ppdg087.obj ppdg088.obj ppdg089.obj \
 	  ppdg090.obj \
-	  ppdgcrt.obj ppdgem.obj ppdhook.obj \
+	  ppdgcrt.obj ppdgem.obj \
 	  ppdsdraw.obj ppdv000.obj ppdv001.obj ppdv002.obj ppdv003.obj ppdv004.obj \
 	  ppdv005.obj ppdv006.obj ppdv007.obj ppdv008.obj ppdv009.obj ppdv010.obj \
 	  ppdv011.obj ppdv012.obj ppdv013.obj ppdv014.obj ppdv015.obj ppdv016.obj \
@@ -86,7 +87,7 @@ ppdgem-s.lib:	$(OBJECTS)
 	wlib -q ppdgem-s.lib +ppdg073.obj +ppdg074.obj +ppdg075.obj +ppdg076.obj +ppdg076.obj +ppdg077.obj +ppdg078.obj
 	wlib -q ppdgem-s.lib +ppdg079.obj +ppdg080.obj +ppdg081.obj +ppdg082.obj +ppdg083.obj +ppdg084.obj +ppdg085.obj
 	wlib -q ppdgem-s.lib +ppdg086.obj +ppdg087.obj +ppdg088.obj +ppdg089.obj +ppdg090.obj
-	wlib -q ppdgem-s.lib +ppdgcrt.obj +ppdgem.obj +ppdhook.obj +ppdsdraw.obj
+	wlib -q ppdgem-s.lib +ppdgcrt.obj +ppdgem.obj +ppdsdraw.obj
 	wlib -q ppdgem-s.lib +ppdlptr.obj +ppdv000.obj +ppdv001.obj +ppdv002.obj +ppdv003.obj +ppdv004.obj +ppdv005.obj +ppdv006.obj
 	wlib -q ppdgem-s.lib +ppdv007.obj +ppdv008.obj +ppdv009.obj +ppdv010.obj +ppdv011.obj +ppdv012.obj +ppdv013.obj +ppdv014.obj
 	wlib -q ppdgem-s.lib +ppdv015.obj +ppdv016.obj +ppdv017.obj +ppdv018.obj +ppdv019.obj +ppdv020.obj +ppdv021.obj +ppdv022.obj
@@ -109,13 +110,14 @@ ppdgem-s.lib:	$(OBJECTS)
 %.obj:	../%.c
 	$(CC) -fo=$@ -c $(CFLAGS) $<
 
-%.obj:	../%.as
-	$(CC) -fo=$@ -c $(CFLAGS) $<
+%.obj:	../%.asm
+	$(CC) -fo=$@ -c $(ASFLAGS) $<
 
 
 tidy:
 	rm -f *.bak
 	rm -f *.obj
+	rm -f *.err
 	rm -f ppdgem-s.lib
 
 clean:	tidy

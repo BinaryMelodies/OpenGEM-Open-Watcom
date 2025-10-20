@@ -33,7 +33,11 @@ WORD vdi(VOID)
 {
 	union REGS ir, or;
 	struct SREGS sr;
+#ifdef __WATCOMC__
+	register void far *ppblock = &pblock;
+#else
 	register far void *ppblock = &pblock;
+#endif
 
 	if (pVdi) return (*pVdi)(ppblock);
 	

@@ -47,5 +47,4 @@ typedef struct over_blk
 {
 	WORD		ob_seglod;
 	WORD		ob_relfac;
-} OVER_BLK;
-
+} OVER_BLK;
