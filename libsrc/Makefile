@@ -68,31 +68,19 @@ all:	../lib/ppdgem-l.lib ../lib/ppdgem-s.lib
 	cp small/ppdgem-s.lib ..\lib\ppdgem-s.lib
 
 large/ppdgem-l.lib: $(SOURCE)
-	cd large
-	make
-	cp ppdgem-l.lib ../../lib
-	cd ..
+	make -C large
+	cp large/ppdgem-l.lib ../lib
 
 small/ppdgem-s.lib: $(SOURCE)
-	cd small
-	make
-	cp ppdgem-s.lib ../../lib
-	cd ..
+	make -C small
+	cp small/ppdgem-s.lib ../lib
 
 tidy:
 	rm -f *.bak
-	cd large
-	make tidy
-	cd ..
-	cd small
-	make tidy
-	cd ..
+	make -C large tidy
+	make -C small tidy
 
 clean:	
 	rm -f *.bak
-	cd large
-	make clean
-	cd ..
-	cd small
-	make clean
-	cd ..
+	make -C large clean
+	make -C small clean

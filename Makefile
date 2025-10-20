@@ -5,64 +5,32 @@ TARGETS=lib/ppdgem-l.lib lib/ppdgem-s.lib bin/exe2acc.exe samples
 all:	$(TARGETS)
 
 samples: bin/exe2acc.exe
-	cd samples
-	make
-	cd ..
+	make -C samples
 
 lib/ppdgem-l.lib lib/ppdgem-s.lib:
-	cd libsrc
-	make
-	cd ..
+	make -C libsrc
 
 bin/exe2acc.exe:
-	cd exe2acc
-	make
-	cd ..
+	make -C exe2acc
 
 install:
-	cd include
-	make install
-	cd ..
-	cd lib
-	make install
-	cd ..
-	cd bin
-	make install
-	cd ..
+	make -C include install
+	make -C lib install
+	make -C bin install
 
 clean:
-	cd libsrc
-	make $@
-	cd ..
-	cd samples
-	make $@
-	cd ..
-	cd exe2acc
-	make $@
-	cd ..
-	cd bin
-	make $@
-	cd ..
-	cd lib
-	make $@ 
-	cd ..
+	make -C libsrc $@
+	make -C samples $@
+	make -C exe2acc $@
+	make -C bin $@
+	make -C lib $@ 
 
 tidy:
-	cd libsrc
-	make $@
-	cd ..
-	cd samples
-	make $@
-	cd ..
-	cd exe2acc
-	make $@
-	cd ..
-	cd bin
-	make $@
-	cd ..
-	cd lib
-	make $@ 
-	cd ..
+	make -C libsrc $@
+	make -C samples $@
+	make -C exe2acc $@
+	make -C bin $@
+	make -C lib $@ 
 
 zip:
 	rm -f ppdgem.zip

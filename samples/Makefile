@@ -36,105 +36,57 @@ main-s.obj:	main.c
 	rm -f main.obj
 
 demo-s.app demo-l.app:	$(MAIN)
-	cd demo
-	make
-	cd ..
+	make -C demo
 
 clock-s.app clock-l.app: $(MAIN)
-	cd clock
-	make
-	cd ..
+	make -C clock
 
 events-s.app events-l.app: $(MAIN)
-	cd events
-	make
-	cd ..
+	make -C events
 
 fdtest-s.app fdtest-l.app: $(MAIN)
-	cd fdtest
-	make
-	cd ..
+	make -C fdtest
 
 spool-s.app spool-l.app: $(MAIN)
-	cd spooler
-	make
-	cd ..
+	make -C spooler
 
 udef-s.app udef-l.app: $(MAIN)
-	cd userdef
-	make
-	cd ..
+	make -C userdef
 
 
 hello-s.app hello-l.app hello-s.acc hello-l.acc: $(MAIN)
-	cd hello
-	make
-	cd ..
+	make -C hello
 
 mgraf-s.app mgraf-l.app mgraf-s.acc mgraf-l.acc: 
-	cd memgraf
-	make
-	cd ..
+	make -C memgraf
 
 growbx-s.acc growbx-l.acc: $(MAIN)
-	cd growbox
-	make
-	cd ..
+	make -C growbox
 
 fmem-s.acc fmem-l.acc: $(MAIN)
-	cd freemem
-	make
-	cd ..
+	make -C freemem
 
 rscr-s.exe: $(MAIN)
-	cd rscreate
-	make
-	cd ..
+	make -C rscreate
 
 xform-s.app xform-l.app: $(MAIN)
-	cd xform
-	make
-	cd ..
+	make -C xform
 
 tidy:
 	rm -f main-?.obj
 	rm -f *.bak
-	cd hello
-	make tidy
-	cd ..
-	cd demo
-	make tidy
-	cd ..
-	cd xform
-	make tidy
-	cd ..
-	cd growbox
-	make tidy
-	cd ..
-	cd clock
-	make tidy
-	cd ..
-	cd events
-	make tidy
-	cd ..
-	cd freemem
-	make tidy
-	cd ..
-	cd memgraf
-	make tidy
-	cd ..
-	cd fdtest
-	make tidy
-	cd ..
-	cd spooler
-	make tidy
-	cd ..
-	cd userdef
-	make tidy
-	cd ..
-	cd rscreate
-	make tidy
-	cd ..
+	make -C hello tidy
+	make -C demo tidy
+	make -C xform tidy
+	make -C growbox tidy
+	make -C clock tidy
+	make -C events tidy
+	make -C freemem tidy
+	make -C memgraf tidy
+	make -C fdtest tidy
+	make -C spooler tidy
+	make -C userdef tidy
+	make -C rscreate tidy
 
 clean:
 	rm -f main-?.obj
@@ -143,40 +95,16 @@ clean:
 	rm -f *.acc
 	rm -f *.exe
 	rm -f *.bak
-	cd hello
-	make clean
-	cd ..
-	cd demo
-	make clean
-	cd ..
-	cd xform
-	make clean
-	cd ..
-	cd growbox
-	make clean
-	cd ..
-	cd clock
-	make clean
-	cd ..
-	cd events
-	make clean
-	cd ..
-	cd freemem
-	make clean
-	cd ..
-	cd memgraf
-	make clean
-	cd ..
-	cd fdtest
-	make clean
-	cd ..
-	cd spooler
-	make clean
-	cd ..
-	cd userdef
-	make clean
-	cd ..
-	cd rscreate
-	make clean
-	cd ..
+	make -C hello clean
+	make -C demo clean
+	make -C xform clean
+	make -C growbox clean
+	make -C clock clean
+	make -C events clean
+	make -C freemem clean
+	make -C memgraf clean
+	make -C fdtest clean
+	make -C spooler clean
+	make -C userdef clean
+	make -C rscreate clean
 
