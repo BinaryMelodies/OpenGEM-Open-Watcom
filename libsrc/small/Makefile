@@ -1,8 +1,8 @@
 include ../../makedefs.i
 
 CC = wcl
-CFLAGS = -q -ms -ox -i=../../include -i=.. $(STDINC)
-ASFLAGS = -q -ms -i=../../include -i=.. $(STDINC)
+CFLAGS = -q -ms -ox -i=.. $(STDINC)
+ASFLAGS = -q -ms -i=.. $(STDINC)
 
 OBJECTS = ems_all.obj ems_fp.obj ems_free.obj ems_fs.obj ems_map.obj ems_np.obj ems_rmap.obj \
 	  ems_smap.obj ems_vers.obj emslib.obj ob_dofl.obj ob_dost.obj ob_dr_di.obj \
@@ -116,7 +116,7 @@ gembnd-s.lib:	$(OBJECTS)
 
 tidy:
 	rm -f *.bak
-	rm -f *.o
+	rm -f *.obj
 	rm -f *.err
 	rm -f gembnd-s.lib
 
