@@ -32,6 +32,6 @@ tidy:
 	rm -f *.sdb
 	rm -f *.sym
 	rm -f *.map
-	rm -f *.obj
+	rm -f *.o
 
 clean:	tidy

@@ -2,11 +2,11 @@
 include ../makedefs.i
 
 install:
-	cp ppdgem-l.lib $(CCDIR)/lib
-	cp ppdgem-s.lib $(CCDIR)/lib
+	cp gembnd-l.lib $(CCDIR)/lib
+	cp gembnd-s.lib $(CCDIR)/lib
 
 tidy:
 
 clean:
-	rm -f ppdgem-l.lib
-	rm -f ppdgem-s.lib
+	rm -f gembnd-l.lib
+	rm -f gembnd-s.lib

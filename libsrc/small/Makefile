@@ -116,7 +116,7 @@ gembnd-s.lib:	$(OBJECTS)
 
 tidy:
 	rm -f *.bak
-	rm -f *.obj
+	rm -f *.o
 	rm -f *.err
 	rm -f gembnd-s.lib
 

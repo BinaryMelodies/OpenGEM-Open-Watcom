@@ -18,12 +18,11 @@ xform-s.app:	xform.c xform.h
 	$(CC) -ms $(CFLAGS) -fe=$@ xform.c ../main-s.obj ../../lib/gembnd-s.lib
 
 tidy:
-	rm -f *.obj
 	rm -f *.bak
 	rm -f *.sdb
 	rm -f *.sym
 	rm -f *.map
-	rm -f *.obj
+	rm -f *.o
 	rm -f xform-?.app
 
 clean:	tidy
