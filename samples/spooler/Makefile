@@ -12,10 +12,10 @@ all:	../spool-l.app ../spool-s.app ../spooler.rsc
 	cp spooler.rsc ..
 
 spool-l.app:	spooler.c spooler.h 
-	$(CC) -ml $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $< ../../lib/gembnd-l.lib
 
 spool-s.app:	spooler.c spooler.h
-	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/gembnd-s.lib
 
 tidy:
 	rm -f *.bak

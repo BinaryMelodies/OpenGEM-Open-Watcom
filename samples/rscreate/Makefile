@@ -10,7 +10,7 @@ all:	../rscr-s.exe
 	cp $< ..
 
 rscr-s.exe:	rscreate.c
-	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/gembnd-s.lib
 
 tidy:
 	rm -f rscr-?.exe

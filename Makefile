@@ -1,13 +1,13 @@
 include makedefs.i
 
-TARGETS=lib/ppdgem-l.lib lib/ppdgem-s.lib bin/exe2acc.exe samples
+TARGETS=lib/gembnd-l.lib lib/gembnd-s.lib bin/exe2acc.exe samples
 
 all:	$(TARGETS)
 
 samples: bin/exe2acc.exe
 	make -C samples
 
-lib/ppdgem-l.lib lib/ppdgem-s.lib:
+lib/gembnd-l.lib lib/gembnd-s.lib:
 	make -C libsrc
 
 bin/exe2acc.exe:
@@ -33,5 +33,5 @@ tidy:
 	make -C lib $@ 
 
 zip:
-	rm -f ppdgem.zip
-	pkzip -rP ppdgem.zip *.*
+	rm -f gembind.zip
+	pkzip -rP gembind.zip *.*

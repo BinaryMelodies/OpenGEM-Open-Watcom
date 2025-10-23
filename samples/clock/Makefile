@@ -13,17 +13,17 @@ all:	../clock-l.app ../clock-s.app ../clock-l.acc ../clock-s.acc
 
 
 clock-l.app:	clock.c
-	$(CC) -ml $(CFLAGS) -fe=$@ $<  ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $<  ../../lib/gembnd-l.lib
 
 clock-s.app:	clock.c
-	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/gembnd-s.lib
 
 
 clock-l.exe:	clock.c 
-	$(CC) -ml -DDESKACC $(CFLAGS) -fm=clock-l.map -fe=$@ $<  ../../lib/ppdgem-l.lib
+	$(CC) -ml -DDESKACC $(CFLAGS) -fm=clock-l.map -fe=$@ $<  ../../lib/gembnd-l.lib
 
 clock-s.exe:	clock.c
-	$(CC) -ms -DESKACC $(CFLAGS) -fm=clock-s.map -fe=$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms -DESKACC $(CFLAGS) -fm=clock-s.map -fe=$@ $< ../../lib/gembnd-s.lib
 
 tidy:
 	rm -f clock-?.exe

@@ -12,7 +12,7 @@ exe2acc${EXEEXT}:	exe2acc.c
 	$(CC) $(CFLAGS) $< -o $@
 
 tidy:
-	rm -f exe2acc.exe
+	rm -f exe2acc
 
 clean:	tidy
 

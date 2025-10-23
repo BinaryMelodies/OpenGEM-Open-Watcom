@@ -59,21 +59,21 @@ SOURCE = ems_all.c ems_fp.c ems_free.c ems_fs.c ems_map.c ems_np.c \
 	 x_udx_yf.c x_udy_sc.c x_ytox.c xfmlib.c
 
 
-all:	../lib/ppdgem-l.lib ../lib/ppdgem-s.lib
+all:	../lib/gembnd-l.lib ../lib/gembnd-s.lib
 
-../lib/ppdgem-l.lib: large/ppdgem-l.lib 
-	cp large/ppdgem-l.lib ../lib/ppdgem-l.lib
+../lib/gembnd-l.lib: large/gembnd-l.lib 
+	cp large/gembnd-l.lib ../lib/gembnd-l.lib
 
-../lib/ppdgem-s.lib: small/ppdgem-s.lib
-	cp small/ppdgem-s.lib ../lib/ppdgem-s.lib
+../lib/gembnd-s.lib: small/gembnd-s.lib
+	cp small/gembnd-s.lib ../lib/gembnd-s.lib
 
-large/ppdgem-l.lib: $(SOURCE)
+large/gembnd-l.lib: $(SOURCE)
 	make -C large
-	cp large/ppdgem-l.lib ../lib
+	cp large/gembnd-l.lib ../lib
 
-small/ppdgem-s.lib: $(SOURCE)
+small/gembnd-s.lib: $(SOURCE)
 	make -C small
-	cp small/ppdgem-s.lib ../lib
+	cp small/gembnd-s.lib ../lib
 
 tidy:
 	rm -f *.bak

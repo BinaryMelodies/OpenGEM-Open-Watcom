@@ -7,4 +7,4 @@ install:
 tidy:
 
 clean:
-	rm -f exe2acc.exe
+	rm -f exe2acc

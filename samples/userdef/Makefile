@@ -12,10 +12,10 @@ all:	../udef-l.app ../udef-s.app ../userdef.rsc
 	cp userdef.rsc ..
 
 udef-l.app:	userdef.c userdef.h 
-	$(CC) -ml $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $< ../../lib/gembnd-l.lib
 
 udef-s.app:	userdef.c userdef.h
-	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/gembnd-s.lib
 
 tidy:
 	rm -f *.bak

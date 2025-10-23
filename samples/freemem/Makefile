@@ -13,10 +13,10 @@ all:	../fmem-l.acc ../fmem-s.acc ../freemem.rsc
 
 
 fmem-l.exe:	freemem.c 
-	$(CC) -ml -DDESKACC $(CFLAGS) -fm=fmem-l.map -fe=$@ $<  ../../lib/ppdgem-l.lib
+	$(CC) -ml -DDESKACC $(CFLAGS) -fm=fmem-l.map -fe=$@ $<  ../../lib/gembnd-l.lib
 
 fmem-s.exe:	freemem.c
-	$(CC) -ms -DESKACC $(CFLAGS) -fm=fmem-s.map -fe=$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms -DESKACC $(CFLAGS) -fm=fmem-s.map -fe=$@ $< ../../lib/gembnd-s.lib
 
 tidy:
 	rm -f fmem-?.exe

@@ -12,10 +12,10 @@ all:	../demo-l.app ../demo-s.app ../demo.rsc
 	cp demo.rsc ..
 
 demo-l.app:	demo.c demo.h 
-	$(CC) -ml $(CFLAGS) -fe=$@ $< ../main-l.obj ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $< ../main-l.obj ../../lib/gembnd-l.lib
 
 demo-s.app:	demo.c demo.h
-	$(CC) -ms $(CFLAGS) -fe=$@ $< ../main-s.obj ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../main-s.obj ../../lib/gembnd-s.lib
 
 tidy:
 	rm -f *.bak

@@ -13,17 +13,17 @@ all:	../hello-l.app ../hello-s.app ../hello-l.acc ../hello-s.acc
 
 
 hello-l.app:	hello.c
-	$(CC) -ml $(CFLAGS) -fe=$@ $< ../main-l.obj ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $< ../main-l.obj ../../lib/gembnd-l.lib
 
 hello-s.app:	hello.c
-	$(CC) -ms $(CFLAGS) -fe=$@ $< ../main-s.obj ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../main-s.obj ../../lib/gembnd-s.lib
 
 
 hello-l.exe:	hello.c 
-	$(CC) -ml -DDESKACC $(CFLAGS) -fm=hello-l.map -fe=$@ $< ../main-l.obj ../../lib/ppdgem-l.lib
+	$(CC) -ml -DDESKACC $(CFLAGS) -fm=hello-l.map -fe=$@ $< ../main-l.obj ../../lib/gembnd-l.lib
 
 hello-s.exe:	hello.c
-	$(CC) -ms -DESKACC $(CFLAGS) -fm=hello-s.map -fe=$@ $< ../main-s.obj ../../lib/ppdgem-s.lib
+	$(CC) -ms -DESKACC $(CFLAGS) -fm=hello-s.map -fe=$@ $< ../main-s.obj ../../lib/gembnd-s.lib
 
 tidy:
 	rm -f hello-?.exe

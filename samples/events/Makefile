@@ -17,10 +17,10 @@ all:	../events-l.app ../events-s.app ../events.rsc ../events.gem
 	cp events.gem ..
 
 events-l.app:	$(SOURCE) $(HDRS)
-	$(CC) -ml $(CFLAGS) -fe=$@ $(SOURCE) ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $(SOURCE) ../../lib/gembnd-l.lib
 
 events-s.app:	$(SOURCE) $(HDRS)
-	$(CC) -ms $(CFLAGS) -fe=$@ $(SOURCE) ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $(SOURCE) ../../lib/gembnd-s.lib
 
 tidy:
 	rm -f *.bak

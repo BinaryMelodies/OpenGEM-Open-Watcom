@@ -12,10 +12,10 @@ all:	../fdtest-l.app ../fdtest-s.app ../fdtest.rsc
 	cp fdtest.rsc ..
 
 fdtest-l.app:	fdtest.c fdtest.h 
-	$(CC) -ml $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-l.lib
+	$(CC) -ml $(CFLAGS) -fe=$@ $< ../../lib/gembnd-l.lib
 
 fdtest-s.app:	fdtest.c fdtest.h
-	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/ppdgem-s.lib
+	$(CC) -ms $(CFLAGS) -fe=$@ $< ../../lib/gembnd-s.lib
 
 tidy:
 	rm -f *.bak
